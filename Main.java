@@ -33,7 +33,7 @@ class Main {
   public static boolean conflictAppointment(Interval[] arr1) {
     Arrays.sort(arr1, (a,b) -> (Integer.compare(a.start, b.start)));
     
-    for(int i = 1; i< arr1.lenght; i++){
+    for(int i = 1; i< arr1.length; i++){
       if(arr1[i].start < arr1[i-1].end)
         return false;
     }
@@ -44,5 +44,8 @@ class Main {
   public static void main(String[] args) {
     Interval[] interval = new Interval[] { new Interval(1, 4), new Interval(2, 5), new Interval(7, 9) };
     System.out.println(" " + Main.conflictAppointment(interval));
+
+        Interval[] interval2 = new Interval[] { new Interval(6, 7), new Interval(2, 4), new Interval(8, 12) };
+    System.out.println(" " + Main.conflictAppointment(interval2));
   }
 }
